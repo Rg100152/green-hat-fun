@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>403 // Access Denied — Green Hat Crew</title>
+  <meta name="description" content="Access denied. This route does not exist in the Green Hat Crew sandbox.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="404" class="page-404">
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <main id="main" class="error">
+    <a class="brand" href="index.html" aria-label="Green Hat Crew home" style="position:absolute;top:1.3rem;left:1.3rem">
+      <img class="brand__logo" src="images/logo.svg" alt="" width="44" height="44">
+      <span class="brand__text">GREEN<span>HAT</span><em>_</em></span>
+    </a>
+
+    <div class="error__inner" id="error-wrap">
+      <p class="error__code">ERR_403 // ROUTE_NOT_FOUND</p>
+      <h1 class="error__title glitch" data-text="ACCESS DENIED">ACCESS DENIED</h1>
+
+      <div class="error__warn">
+        <span class="warn-dot"></span>
+        INTRUSION LOGGED // IP TRACED (not really)
+      </div>
+
+      <p class="error__text">
+        This route does not exist in the sandbox. You either mistyped a URL,
+        followed a dead link, or tried something you absolutely should not have.
+        Either way: respect the boundary.
+      </p>
+
+      <div class="error__actions">
+        <a class="btn btn--solid" href="index.html">[ RETURN TO SAFE ZONE ]</a>
+        <a class="btn btn--ghost" href="terminal.html">[ OPEN TERMINAL ]</a>
+      </div>
+
+      <div class="error__terminal" aria-label="Error details">
+        <div><span class="p">guest@greenhat:~$</span> curl /the-forbidden-route</div>
+        <div><span class="e">HTTP/2 403 Forbidden</span></div>
+        <div>server: greenhat-sandbox</div>
+        <div>message: nice try, the vibes are not here</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

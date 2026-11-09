@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal // Green Hat Crew</title>
+  <meta name="description" content="A fake interactive terminal sandbox for the Green Hat Crew. Type help to begin.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="terminal">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a class="brand" href="index.html" aria-label="Green Hat Crew home">
+        <img class="brand__logo" src="images/logo.svg" alt="" width="44" height="44">
+        <span class="brand__text">GREEN<span>HAT</span><em>_</em></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="arsenal.html">Arsenal</a></li>
+          <li><a class="nav__link" href="crew.html">Crew</a></li>
+          <li><a class="nav__link" href="funzone.html">Fun Zone</a></li>
+          <li><a class="nav__link" href="terminal.html">Terminal</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn--solid btn--sm nav__cta" href="terminal.html">[ INITIATE ]</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head" style="--head-img:url('images/bg4.jpg')">
+      <div class="container">
+        <p class="section-tag" data-reveal>SANDBOX</p>
+        <h1 class="page-title glitch" data-text="THE TERMINAL" data-reveal>THE TERMINAL</h1>
+        <p class="page-sub" data-reveal>
+          A completely fake command line. Nothing here touches a real system.
+          Type <code>help</code> and poke around.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="terminal" id="terminal" data-reveal>
+          <div class="terminal__bar">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--amber"></span>
+            <span class="dot dot--green"></span>
+            <span class="terminal__title">guest@greenhat: ~/sandbox</span>
+            <span class="terminal__status">CONNECTED</span>
+          </div>
+
+          <div class="terminal__body" id="terminal-output" aria-live="polite" aria-label="Terminal output"></div>
+
+          <form class="terminal__form" id="terminal-form" autocomplete="off">
+            <label class="sr-only" for="terminal-input">Terminal command</label>
+            <span class="terminal__prompt" aria-hidden="true">guest@greenhat:~$</span>
+            <input id="terminal-input" name="command" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="type a command..." aria-label="Type a command">
+          </form>
+
+          <div class="terminal__chips">
+            <span>TRY:</span>
+            <button type="button" data-cmd="help">help</button>
+            <button type="button" data-cmd="about">about</button>
+            <button type="button" data-cmd="contact">contact</button>
+            <button type="button" data-cmd="banner">banner</button>
+            <button type="button" data-cmd="neofetch">neofetch</button>
+            <button type="button" data-cmd="hack">hack</button>
+            <button type="button" data-cmd="clear">clear</button>
+          </div>
+        </div>
+
+        <p class="terminal__hint">
+          &gt; Frontend demo only. No commands are executed on a server.
+          Arrow keys browse command history.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Green Hat Crew home">
+          <img class="brand__logo" src="images/logo.svg" alt="" width="44" height="44">
+          <span class="brand__text">GREEN<span>HAT</span><em>_</em></span>
+        </a>
+        <p>Legal hacking. Questionable memes. A crew that learns in public and breaks things only in the lab.</p>
+        <div class="status"><span class="status__dot"></span> SYSTEM STATUS: ONLINE</div>
+      </div>
+
+      <div class="footer__col">
+        <h3>// NAVIGATE</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="arsenal.html">Arsenal</a></li>
+          <li><a href="crew.html">Crew</a></li>
+          <li><a href="funzone.html">Fun Zone</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="terminal.html">Terminal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3>// CHANNELS</h3>
+        <ul>
+          <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://instagram.com/linuxuser.raj" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:rajgautam@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p>&copy; <span id="year">2026</span> GREEN HAT CREW</p>
+      <p>Made with <span class="heart">&#10084;</span> by Green Hat Crew for pure vibes.</p>
+      <p class="footer__warn">NO ILLEGAL SHIT // LABS &amp; CTFS ONLY</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Zone // Green Hat Crew</title>
+  <meta name="description" content="CTF challenges, home lab builds, movie nights and meme wars — the Green Hat Crew fun zone.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="funzone">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a class="brand" href="index.html" aria-label="Green Hat Crew home">
+        <img class="brand__logo" src="images/logo.svg" alt="" width="44" height="44">
+        <span class="brand__text">GREEN<span>HAT</span><em>_</em></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="arsenal.html">Arsenal</a></li>
+          <li><a class="nav__link" href="crew.html">Crew</a></li>
+          <li><a class="nav__link" href="funzone.html">Fun Zone</a></li>
+          <li><a class="nav__link" href="terminal.html">Terminal</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn--solid btn--sm nav__cta" href="terminal.html">[ INITIATE ]</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head" style="--head-img:url('images/bg6.jpg')">
+      <div class="container">
+        <p class="section-tag" data-reveal>MISSIONS &amp; MAYHEM</p>
+        <h1 class="page-title glitch" data-text="FUN ZONE" data-reveal>FUN ZONE</h1>
+        <p class="page-sub" data-reveal>
+          Where the crew actually hangs out. Friendly CTFs, questionable movies,
+          home lab builds and a meme war that has gone on for far too long.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="countdown" data-reveal>
+          <p class="countdown__label">// NEXT CREW CTF BEGINS IN</p>
+          <div class="countdown__clock" id="countdown" aria-label="Countdown to the next CTF">
+            <div><span id="cd-d">00</span><small>DAYS</small></div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div><span id="cd-h">00</span><small>HOURS</small></div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div><span id="cd-m">00</span><small>MINUTES</small></div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div><span id="cd-s">00</span><small>SECONDS</small></div>
+          </div>
+          <p class="countdown__meta" id="cd-date">TARGET LOCKED // SAT @ 18:00 LOCAL</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>HACK THE PLANET</span><span>&bull;</span><span>NO ILLEGAL SHIT</span><span>&bull;</span><span>JUST VIBES</span><span>&bull;</span><span>CTF TIME</span><span>&bull;</span><span>HACK THE PLANET</span><span>&bull;</span><span>NO ILLEGAL SHIT</span><span>&bull;</span><span>JUST VIBES</span><span>&bull;</span><span>CTF TIME</span><span>&bull;</span>
+        </div>
+        <div class="marquee__group">
+          <span>HACK THE PLANET</span><span>&bull;</span><span>NO ILLEGAL SHIT</span><span>&bull;</span><span>JUST VIBES</span><span>&bull;</span><span>CTF TIME</span><span>&bull;</span><span>HACK THE PLANET</span><span>&bull;</span><span>NO ILLEGAL SHIT</span><span>&bull;</span><span>JUST VIBES</span><span>&bull;</span><span>CTF TIME</span><span>&bull;</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="red-panel section">
+      <div class="container">
+        <header class="red-panel__head">
+          <p class="section-tag">FUN ZONE // ACTIVE</p>
+          <h2>PICK A SIDE QUEST</h2>
+          <p>Every mission below is legal, low-stakes and slightly unhinged. Click a card to open the brief.</p>
+        </header>
+
+        <div class="mission-grid">
+          <button class="mission-card" type="button" data-reveal
+            data-mission="&gt; CTF CHALLENGES&#10;&#10;Every second Saturday, 18:00 local.&#10;Jeopardy-style, beginner-friendly, zero gatekeeping.&#10;Bring snacks, bring notes, bring a friend.&#10;&#10;Next run is on the countdown above.">
+            <span class="mission-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l6-6M14 10l6-6M8 4H4v4M20 16v4h-4M3 3l6 6M21 21l-6-6"/></svg>
+            </span>
+            <span class="mission-card__id">MSN_01</span>
+            <h3>CTF CHALLENGES</h3>
+            <p>Friendly jeopardy boards, beginner hints and bragging rights. No real targets, ever.</p>
+            <span class="mission-card__cta">OPEN_BRIEF &rarr;</span>
+          </button>
+
+          <button class="mission-card" type="button" data-reveal
+            data-mission="&gt; HOME LAB SETUP&#10;&#10;Proxmox on a beat-up mini PC.&#10;pfSense, an isolated VLAN, and a Windows box that exists purely to be broken.&#10;We rebuild it together every few months.&#10;&#10;Bring your own hardware. We do not touch anything else.">
+            <span class="mission-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M7 7h.01M7 17h.01M11 7h5M11 17h5"/></svg>
+            </span>
+            <span class="mission-card__id">MSN_02</span>
+            <h3>HOME LAB SETUP</h3>
+            <p>Proxmox, pfSense, snapshots and chaos. Build a safe playground that survives our curiosity.</p>
+            <span class="mission-card__cta">OPEN_BRIEF &rarr;</span>
+          </button>
+
+          <button class="mission-card" type="button" data-reveal
+            data-mission="&gt; MOVIE NIGHTS&#10;&#10;Mr. Robot rewatches. Hackers (1995) for the fits. WarGames for the history.&#10;We pause to fact-check, which ruins the mood and we keep doing it.&#10;&#10;Discord voice channel. Snacks are mandatory.">
+            <span class="mission-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v14M16 5v14M3 9h5M3 15h5M16 9h5M16 15h5"/></svg>
+            </span>
+            <span class="mission-card__id">MSN_03</span>
+            <h3>MOVIE NIGHTS</h3>
+            <p>Mr. Robot rewatches, 90s hacker films and the worst on-screen "hacking" ever filmed.</p>
+            <span class="mission-card__cta">OPEN_BRIEF &rarr;</span>
+          </button>
+
+          <button class="mission-card" type="button" data-reveal
+            data-mission="&gt; MEME WARS&#10;&#10;Post the worst opsec meme you can find.&#10;Winner gets a fake trophy and permanent bragging rights.&#10;Rule: no doxxing, no slurs, no real targets.&#10;&#10;Current champion: NullByte. It was a SQL injection pun. Devastating.">
+            <span class="mission-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 9h.01M16 9h.01M7.5 14s1.4 3 4.5 3 4.5-3 4.5-3"/></svg>
+            </span>
+            <span class="mission-card__id">MSN_04</span>
+            <h3>MEME WARS</h3>
+            <p>Compete for the worst opsec meme on the internet. The trophy is imaginary, the shame is real.</p>
+            <span class="mission-card__cta">OPEN_BRIEF &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee marquee--dark" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>LEARN LOUDLY</span><span>//</span><span>BREAK SAFELY</span><span>//</span><span>DOCUMENT EVERYTHING</span><span>//</span><span>SHARE THE KNOWLEDGE</span><span>//</span><span>LEARN LOUDLY</span><span>//</span><span>BREAK SAFELY</span><span>//</span><span>DOCUMENT EVERYTHING</span><span>//</span><span>SHARE THE KNOWLEDGE</span><span>//</span>
+        </div>
+        <div class="marquee__group">
+          <span>LEARN LOUDLY</span><span>//</span><span>BREAK SAFELY</span><span>//</span><span>DOCUMENT EVERYTHING</span><span>//</span><span>SHARE THE KNOWLEDGE</span><span>//</span><span>LEARN LOUDLY</span><span>//</span><span>BREAK SAFELY</span><span>//</span><span>DOCUMENT EVERYTHING</span><span>//</span><span>SHARE THE KNOWLEDGE</span><span>//</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-tag" data-reveal>WEEKLY TRANSMISSIONS</p>
+          <h2 class="section-title" data-reveal>THE CREW <span class="text-red">SCHEDULE.</span></h2>
+        </header>
+
+        <div class="vibe-strip">
+          <div data-reveal>
+            <h3>// WEDNESDAY</h3>
+            <p>Lab night. Bring one weird problem and we will debug it until someone says "have you tried turning it off".</p>
+          </div>
+          <div data-reveal>
+            <h3>// FRIDAY</h3>
+            <p>Movie night. Hacker cinema, fact-checking pauses and an unreasonable amount of snacks.</p>
+          </div>
+          <div data-reveal>
+            <h3>// SATURDAY</h3>
+            <p>CTF time. Friendly competition, beginner hints and absolutely no toxic leaderboard energy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Green Hat Crew home">
+          <img class="brand__logo" src="images/logo.svg" alt="" width="44" height="44">
+          <span class="brand__text">GREEN<span>HAT</span><em>_</em></span>
+        </a>
+        <p>Legal hacking. Questionable memes. A crew that learns in public and breaks things only in the lab.</p>
+        <div class="status"><span class="status__dot"></span> SYSTEM STATUS: ONLINE</div>
+      </div>
+
+      <div class="footer__col">
+        <h3>// NAVIGATE</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="arsenal.html">Arsenal</a></li>
+          <li><a href="crew.html">Crew</a></li>
+          <li><a href="funzone.html">Fun Zone</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="terminal.html">Terminal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3>// CHANNELS</h3>
+        <ul>
+          <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://instagram.com/linuxuser.raj" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:rajgautam@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p>&copy; <span id="year">2026</span> GREEN HAT CREW</p>
+      <p>Made with <span class="heart">&#10084;</span> by Green Hat Crew for pure vibes.</p>
+      <p class="footer__warn">NO ILLEGAL SHIT // LABS &amp; CTFS ONLY</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
